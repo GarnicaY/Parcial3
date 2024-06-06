@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Coordinadores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Coordinadores</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="coordinador : ${listaCoordinadores}">
+                    <td th:text="${coordinador.id}"></td>
+                    <td th:text="${coordinador.nombre}"></td>
+                    <td th:text="${coordinador.apellido}"></td>
+                    <td th:text="${coordinador.correo}"></td>
+                    <td>
+                        <a th:href="@{/coordinador/editar/{id}(id=${coordinador.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/coordinador/eliminar/{id}(id=${coordinador.id})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/coordinador/agregar}" class="btn btn-success">Agregar Coordinador</a>		
+		<a th:href="@{/inicioAdmin}" class="btn btn-info">Volver</a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

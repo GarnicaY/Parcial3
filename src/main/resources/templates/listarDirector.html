@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Directores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Directores</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="director : ${listaDirectores}">
+                    <td th:text="${director.id}"></td>
+                    <td th:text="${director.nombre}"></td>
+                    <td th:text="${director.apellido}"></td>
+                    <td th:text="${director.correo}"></td>
+                    <td>
+                        <a th:href="@{/director/editar/{id}(id=${director.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/director/eliminar/{id}(id=${director.id})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/director/agregar}" class="btn btn-success">Agregar Director</a>
+		<a th:href="@{/inicioAdmin}" class="btn btn-info">regresar</a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

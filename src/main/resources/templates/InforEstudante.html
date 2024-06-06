@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Información del Estudiante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Información del Estudiante</h1>
+        </div>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td th:text="${estudiante.id}">ID del Estudiante</td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td th:text="${estudiante.nombre}">Nombre del Estudiante</td>
+                </tr>
+                <tr>
+                    <th>Apellido</th>
+                    <td th:text="${estudiante.apellido}">Apellido del Estudiante</td>
+                </tr>
+                <tr>
+                    <th>Correo</th>
+                    <td th:text="${estudiante.correo}">Correo del Estudiante</td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/buscarEstudiante}" class="btn btn-primary mt-3">Buscar Otro Estudiante</a>
+        <a th:href="@{/index}" class="btn btn-info mt-3">Regresar</a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Estudiante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Buscar Estudiante</h1>
+        </div>
+        <form th:action="@{/buscarEstudiante}" method="post">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" id="id" name="id" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        <a th:href="@{/inicioDirector}" class="btn btn-info mt-3">Regresar</a>
+        <div th:if="${mensaje}" class="alert alert-danger mt-3">
+            <p th:text="${mensaje}"></p>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
