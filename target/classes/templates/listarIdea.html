@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ideas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Ideas</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="trabajo : ${listaTrabajos}">
+                    <td th:text="${trabajo.id}"></td>
+                    <td th:text="${trabajo.titulo}"></td>
+                    <td th:text="${trabajo.descripcion}"></td>
+                    <td>
+                        <a th:href="@{/trabajo/editar/{id}(id=${trabajo.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/trabajo/eliminar/{id}(id=${trabajo.id})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/trabajo/agregar}" class="btn btn-success">Agregar Idea</a>		
+		<a th:href="@{/inicioCoordinador}" class="btn btn-info">Volver</a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

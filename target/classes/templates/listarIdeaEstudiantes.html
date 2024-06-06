@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ideas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Ideas</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Elegir idea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="trabajo : ${listaTrabajoEstudiante}">
+                    <td th:text="${trabajo.id}"></td>
+                    <td th:text="${trabajo.titulo}"></td>
+                    <td th:text="${trabajo.descripcion}"></td>
+                    <td>
+                        <form th:action="@{/elegirTrabajo}" method="post">
+                            <input type="hidden" name="estudianteId" th:value="${estudiante.id}" />
+                            <input type="hidden" name="trabajoId" th:value="${trabajo.id}" />
+                            <button type="submit" class="btn btn-dark">Elegir Idea</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/inicioEstudiante/{id}(id=${estudiante.id})}" class="btn btn-success">Regresar</a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

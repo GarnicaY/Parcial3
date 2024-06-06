@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Panel de Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="shortcut icon" th:href="@{/img/img1.png}" type="image/x-icon"/>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="jumbotron">
+        <h1 class="text-center mb-3">Panel de Administrador</h1>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item"><a th:href="@{/mostrarAdmins}">Gestionar Administradores</a></li>
+				<li class="list-group-item"><a th:href="@{/mostrarCoordinadores}">Gestionar Coordinadores</a></li>
+				<li class="list-group-item"><a th:href="@{/mostrarDirectores}">Gestionar Directores</a></li>
+				<li class="list-group-item"><a th:href="@{/mostrarEvaluadores}">Gestionar Evaluadores</a></li>
+				<li class="list-group-item"><a th:href="@{/mostrarEstudiantes}">Gestionar Estudiantes</a></li>
+            </ul>
+            <a th:href="@{/index}" class="btn btn-primary mt-3">Volver</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

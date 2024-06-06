@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignar Director y Evaluador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="text-center mb-3">Asignar Director y Evaluador</h1>
+        </div>
+        <form th:action="@{/guardarAsignacion}" th:object="${trabajo}" method="post">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" class="form-control" th:field="*{titulo}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" class="form-control" th:field="*{descripcion}" readonly></textarea>
+            </div>
+			
+            <div class="form-group">
+                <label for="idEstudiante">ID Estudiante</label>
+                <input type="text" id="idEstudiante" class="form-control" th:field="*{idEstudiante}" readonly>
+            </div>
+			<div class="form-group">
+                <label for="director">Director</label>
+                <select id="director" class="form-control" th:field="*{idDirector}">
+                    <option th:each="director : ${listaDirectores}" th:value="${director.id}" th:text="${director.nombre}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="evaluador">Evaluador</label>
+                <select id="evaluador" class="form-control" th:field="*{idEvaluador}">
+                    <option th:each="evaluador : ${listaEvaluadores}" th:value="${evaluador.id}" th:text="${evaluador.nombre}"></option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+			<a th:href="@{/inicioCoordinador}" class="btn btn-info">Regresar</a>
+        </form>
+    </div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</body>
+	</html>

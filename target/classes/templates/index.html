@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Gestor De Proyectos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="shortcut icon" th:href="@{/img/img1.png}" type="image/x-icon"/>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="display-4">¡Gestor De Proyectos!</h1>
+            <p class="lead">Bienvenido al Gestor de Proyectos</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <a th:href="@{/inicioAdmin}" class="btn btn-primary mb-3" style="width: 200px;">Admin</a>
+            <a th:href="@{/loginEstudiante}" class="btn btn-primary mb-3" style="width: 200px;">Estudiante</a>
+            <a th:href="@{/loginCoordinador}" class="btn btn-primary mb-3" style="width: 200px;">Coordinador</a>
+            <a th:href="@{/loginDirector}" class="btn btn-primary mb-3" style="width: 200px;">Director</a>
+            <a th:href="@{/loginEvaluador}" class="btn btn-primary mb-3" style="width: 200px;">Evaluador</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
